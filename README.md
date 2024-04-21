@@ -81,8 +81,8 @@ existing efficient ViTs and CNNs, and are difficult to eliminate through deep la
 
 | Model | #Params | #FLOPs |IN-1K | IN-A |IN-R|Sketch|IN-V2| Download |Config| 
 |:---:|:---:|:---:|:---:| :---:|:---:|:---:| :---:|:---:|:---:|
-| TransNeXt-Small |49.7M|32.1G| 86.0| 58.3|56.4|43.2|76.8| [model](https://huggingface.co/DaiShiResearch/transnext-small-384-1k-ft-1k/resolve/main/transnext_small_384_1k_ft_1k.pth?download=true)|[config](/classification/configs/finetune/transnext_small_384.py)|
-| TransNeXt-Base |89.7M|56.3G| 86.2| 61.6|57.7|44.7|77.0| [model](https://huggingface.co/DaiShiResearch/transnext-base-384-1k-ft-1k/resolve/main/transnext_base_384_1k_ft_1k.pth?download=true)|[config](/classification/configs/finetune/transnext_base_384.py)|
+| TransNeXt-Small |49.7M|32.1G| 86.0| 58.3|56.4|43.2|76.8| [model](https://huggingface.co/DaiShiResearch/transnext-small-384-1k-ft-1k/resolve/main/transnext_small_384_1k_ft_1k.pth?download=true)|[config](/classification/configs/finetune/transnext_small_384_ft.py)|
+| TransNeXt-Base |89.7M|56.3G| 86.2| 61.6|57.7|44.7|77.0| [model](https://huggingface.co/DaiShiResearch/transnext-base-384-1k-ft-1k/resolve/main/transnext_base_384_1k_ft_1k.pth?download=true)|[config](/classification/configs/finetune/transnext_base_384_ft.py)|
 
 **ImageNet-1K 256x256 pre-trained model fully utilizing aggregated attention at all stages:**
 

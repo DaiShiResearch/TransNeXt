@@ -15,8 +15,8 @@
 
 | Model | #Params | #FLOPs |IN-1K | IN-A |IN-R|Sketch|IN-V2| Download |Config| 
 |:---:|:---:|:---:|:---:| :---:|:---:|:---:| :---:|:---:|:---:|
-| TransNeXt-Small |49.7M|32.1G| 86.0| 58.3|56.4|43.2|76.8| [model](https://huggingface.co/DaiShiResearch/transnext-small-384-1k-ft-1k/resolve/main/transnext_small_384_1k_ft_1k.pth?download=true)|[config](/classification/configs/finetune/transnext_small_384.py)|
-| TransNeXt-Base |89.7M|56.3G| 86.2| 61.6|57.7|44.7|77.0| [model](https://huggingface.co/DaiShiResearch/transnext-base-384-1k-ft-1k/resolve/main/transnext_base_384_1k_ft_1k.pth?download=true)|[config](/classification/configs/finetune/transnext_base_384.py)|
+| TransNeXt-Small |49.7M|32.1G| 86.0| 58.3|56.4|43.2|76.8| [model](https://huggingface.co/DaiShiResearch/transnext-small-384-1k-ft-1k/resolve/main/transnext_small_384_1k_ft_1k.pth?download=true)|[config](/classification/configs/finetune/transnext_small_384_ft.py)|
+| TransNeXt-Base |89.7M|56.3G| 86.2| 61.6|57.7|44.7|77.0| [model](https://huggingface.co/DaiShiResearch/transnext-base-384-1k-ft-1k/resolve/main/transnext_base_384_1k_ft_1k.pth?download=true)|[config](/classification/configs/finetune/transnext_base_384_ft.py)|
 
 **ImageNet-1K 256x256 pre-trained model fully utilizing aggregated attention at all stages:**
 
@@ -120,7 +120,7 @@ bash dist_train.sh <config-file> <num-of-gpus> --data-path /path/to/imagenet --b
 To fine-tune the TransNeXt-Small model pre-trained at a resolution of `224x224` on 8 GPUs at a resolution of `384x384`:
 
 ```
-bash dist_train.sh ./configs/finetune/transnext_small_384.py 8 --data-path /path/to/imagenet --batch-size 128  --resume <path-to-pretrained-weights>
+bash dist_train.sh ./configs/finetune/transnext_small_384_ft.py 8 --data-path /path/to/imagenet --batch-size 128  --resume <path-to-pretrained-weights>
 ```
 The command format is similar to ImageNet-1K pre-training, you only need to use the configuration file in the `./configs/finetune/` directory and the pre-trained weights downloaded from the model zoo to start training.
 
