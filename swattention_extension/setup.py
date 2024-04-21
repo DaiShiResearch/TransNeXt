@@ -1,3 +1,16 @@
+'''
+TransNeXt: Robust Foveal Visual Perception for Vision Transformers
+Paper: https://arxiv.org/abs/2311.17132
+Code: https://github.com/DaiShiResearch/TransNeXt
+
+Author: Dai Shi
+Github: https://github.com/DaiShiResearch
+Email: daishiresearch@gmail.com
+
+This source code is licensed under the license found in the
+LICENSE file in the root directory of this source tree.
+'''
+
 import glob
 import os.path as osp
 from setuptools import setup

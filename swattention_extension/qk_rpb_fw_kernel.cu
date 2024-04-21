@@ -29,6 +29,7 @@ __global__ void qk_rpb_fw_kernel(
                 scalar_t updt = scalar_t(0);
                 if (((ni>=0) && (ni<height))&& ((nj>=0) && (nj<width))){
                     const int key_y = ni*width+nj;
+                    #pragma unroll
                     for (int dimOffset=0; dimOffset < queries.size(3); ++dimOffset)
                         updt += queries[b][h][y][dimOffset] * keys[b][h][key_y][dimOffset];
                     updt += rpb[h][z];

@@ -1,0 +1,6 @@
+torch==2.0.1
+torchvision==0.15.2
+timm==0.5.4
+mmcv==2.0.0
+mmengine==0.7.3
+mmsegmentation==1.0.0

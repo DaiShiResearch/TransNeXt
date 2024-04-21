@@ -28,6 +28,7 @@ __global__ void rpb_bw_kernel(
                 const int nj = j+kj-(kernel_size-1)/2;
                 scalar_t updt = scalar_t(0);
                 if (((ni>=0) && (ni<height))&& ((nj>=0) && (nj<width))){
+                    #pragma unroll
                     for (int b=0; b < d_attn_weight.size(0); ++b)
                         updt += d_attn_weight[b][x][y][z];
                 }
