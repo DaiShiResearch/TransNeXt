@@ -12,6 +12,8 @@ Official PyTorch implementation
 of ["TransNeXt: Robust Foveal Visual Perception for Vision Transformers"](https://arxiv.org/pdf/2311.17132.pdf) [CVPR 2024]
 .
 
+**🤗 Don’t hesitate to give me a ⭐️, if you are interested in this project!**
+
 ## Updates
 
 ***2024.04.20*** We have released the complete training and inference code, pre-trained model weights, and training

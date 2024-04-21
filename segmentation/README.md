@@ -32,9 +32,9 @@ folders.
 
 ## How to use
 
-***The code & tutorial for the UPerNet method are >> [here](maskrcnn) <<***
+***The code & tutorial for the UPerNet method are >> [here](upernet) <<***
 
-***The code & tutorial for the Mask2Former method are >> [here](dino) <<***
+***The code & tutorial for the Mask2Former method are >> [here](mask2former) <<***
 
 ## Acknowledgement
 
