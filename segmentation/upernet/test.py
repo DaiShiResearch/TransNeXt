@@ -24,7 +24,7 @@ def is_installed(package_name):
 
 if is_installed('swattention'):
     print('swattention package found, loading CUDA version of TransNeXt')
-    import transnext_native
+    import transnext_cuda
 else:
     print('swattention package not found, loading PyTorch native version of TransNeXt')
     import transnext_native

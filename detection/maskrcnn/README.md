@@ -23,7 +23,7 @@
 ## Evaluation
 To evaluate Mask R-CNN models with TransNeXt backbone on COCO val, you can use the following command:
 
-    bash dist_test.sh <config-file> <gpu-num> --eval bbox segm
+    bash dist_test.sh <config-file> <checkpoint-path> <gpu-num> --eval bbox segm
 
 For example, to evaluate the TransNeXt-Tiny on a single GPU:
     

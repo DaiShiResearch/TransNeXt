@@ -7,7 +7,7 @@
 | Backbone | Pretrained Model| Crop Size |Lr Schd| mIoU|mIoU (ms+flip)| #Params | Download |Config| Log |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | TransNeXt-Tiny | [ImageNet-1K](https://huggingface.co/DaiShiResearch/transnext-tiny-224-1k/resolve/main/transnext_tiny_224_1k.pth?download=true)|512x512|160K|51.1|51.5/51.7|59M|[model](https://huggingface.co/DaiShiResearch/upernet-transnext-tiny-ade/resolve/main/upernet_transnext_tiny_512x512_160k_ade20k_in1k.pth?download=true)|[config](/segmentation/upernet/configs/upernet_transnext_tiny_512x512_160k_ade20k_ss.py)|[log](https://huggingface.co/DaiShiResearch/upernet-transnext-tiny-ade/blob/main/upernet_transnext_tiny_512x512_160k_ade20k_ss.log.json)|
-| TransNeXt-Small | [ImageNet-1K](https://huggingface.co/DaiShiResearch/transnext-small-224-1k/resolve/main/transnext_small_224_1k.pth?download=true)|512x512|160K|52.2|52.5/51.8|80M|[model](https://huggingface.co/DaiShiResearch/upernet-transnext-small-ade/resolve/main/upernet_transnext_small_512x512_160k_ade20k_in1k.pth?download=true)|[config](/segmentation/upernet/configs/upernet_transnext_small_512x512_160k_ade20k_ss.py)|[log](https://huggingface.co/DaiShiResearch/upernet-transnext-small-ade/blob/main/upernet_transnext_small_512x512_160k_ade20k_ss.log.json)|
+| TransNeXt-Small | [ImageNet-1K](https://huggingface.co/DaiShiResearch/transnext-small-224-1k/resolve/main/transnext_small_224_1k.pth?download=true)|512x512|160K|52.2|52.5/52.8|80M|[model](https://huggingface.co/DaiShiResearch/upernet-transnext-small-ade/resolve/main/upernet_transnext_small_512x512_160k_ade20k_in1k.pth?download=true)|[config](/segmentation/upernet/configs/upernet_transnext_small_512x512_160k_ade20k_ss.py)|[log](https://huggingface.co/DaiShiResearch/upernet-transnext-small-ade/blob/main/upernet_transnext_small_512x512_160k_ade20k_ss.log.json)|
 | TransNeXt-Base | [ImageNet-1K](https://huggingface.co/DaiShiResearch/transnext-base-224-1k/resolve/main/transnext_base_224_1k.pth?download=true)|512x512|160K|53.0|53.5/53.7|121M|[model](https://huggingface.co/DaiShiResearch/upernet-transnext-base-ade/resolve/main/upernet_transnext_base_512x512_160k_ade20k_in1k.pth?download=true)|[config](/segmentation/upernet/configs/upernet_transnext_base_512x512_160k_ade20k_ss.py)|[log](https://huggingface.co/DaiShiResearch/upernet-transnext-base-ade/blob/main/upernet_transnext_base_512x512_160k_ade20k_ss.log.json)|
 * In the context of multi-scale evaluation, TransNeXt reports test results under two distinct scenarios: **interpolation** and **extrapolation** of relative position bias. 
 
@@ -26,7 +26,7 @@
 
 To run single-scale evaluation of UPerNet models with TransNeXt backbone on ADE20K, you can use the following command:
 
-    bash dist_test.sh <config-file-ending-with-"ss"> <gpu-num> --eval mIoU
+    bash dist_test.sh <config-file-ending-with-"ss"> <checkpoint-path> <gpu-num> --eval mIoU
 
 For example, to evaluate the TransNeXt-Tiny on a single GPU:
     
@@ -40,11 +40,11 @@ For example, to evaluate the TransNeXt-Tiny on 8 GPUs:
 
 To evaluate the pre-trained models with multi-scale inputs and flip augmentations on ADE20K under`interpolation of relative position bias` strategy, you can use the following command:
     
-    bash dist_test.sh <config-file-ending-with-"ms"> <gpu-num> --eval mIoU  --aug-test
+    bash dist_test.sh <config-file-ending-with-"ms"> <checkpoint-path> <gpu-num> --eval mIoU  --aug-test
 
 You can also use the `<config-file-ending-with-"ms_extrapolation">` for multi-scale evaluation under `extrapolation of relative position bias` strategy, using the following command:
 
-    bash dist_test.sh <config-file-ending-with-"ms_extrapolation"> <gpu-num> --eval mIoU  --aug-test
+    bash dist_test.sh <config-file-ending-with-"ms_extrapolation"> <checkpoint-path> <gpu-num> --eval mIoU  --aug-test
 
 ## Training
 In order to train UPerNet models with TransNeXt backbone on the ADE20K dataset, first, you need to fill in the path of your downloaded pretrained checkpoint in `./configs/<config-file-ending-with-"ss">`. Specifically, change it to:

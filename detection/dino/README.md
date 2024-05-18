@@ -24,7 +24,7 @@
 
 To evaluate DINO models with TransNeXt backbone on COCO val, you can use the following command:
 
-    bash dist_test.sh <config-file> <gpu-num>
+    bash dist_test.sh <config-file> <checkpoint-path> <gpu-num>
 
 For example, to evaluate the TransNeXt-Tiny under 4-scale settings on a single GPU:
 
