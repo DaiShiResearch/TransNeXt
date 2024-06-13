@@ -61,11 +61,11 @@ This project is released under the Apache 2.0 license. Please see the [LICENSE](
 If you find our work helpful, please consider citing the following bibtex. We would greatly appreciate a star for this
 project.
 
-    @misc{shi2023transnext,
-      author = {Dai Shi},
-      title = {TransNeXt: Robust Foveal Visual Perception for Vision Transformers},
-      year = {2023},
-      eprint = {arXiv:2311.17132},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+    @InProceedings{shi2023transnext,
+      author    = {Dai Shi},
+      title     = {TransNeXt: Robust Foveal Visual Perception for Vision Transformers},
+      booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+      month     = {June},
+      year      = {2024},
+      pages     = {17773-17783}
     }
